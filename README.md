@@ -40,18 +40,37 @@ If you use Claude Desktop, you can skip downloading the code and just configure 
 
 *(Requires [uv](https://docs.astral.sh/uv/) installed)*
 
-### Using with Cursor / Trae
+### Using with Trae
 
-1.  Open **Cursor Settings** (or Trae Settings) -> **Features** -> **MCP Servers**.
+In Trae Settings -> MCP Servers -> Click **Add** -> Select **Manual Configuration (JSON)**, then paste:
+
+```json
+{
+  "mcpServers": {
+    "scopus-assistant": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/qwe4559999/scopus-mcp.git",
+        "scopus-mcp"
+      ],
+      "env": {
+        "SCOPUS_API_KEY": "PUT_YOUR_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+### Using with Cursor
+
+1.  Open **Cursor Settings** -> **Features** -> **MCP Servers**.
 2.  Click **+ Add New MCP Server**.
 3.  Fill in the details:
-    *   **Name**: `scopus-mcp` (or any name you prefer)
+    *   **Name**: `scopus-mcp`
     *   **Type**: `command` (stdio)
     *   **Command**: `uvx --from git+https://github.com/qwe4559999/scopus-mcp.git scopus-mcp`
-4.  **Important**: Since Cursor/Trae UI might not support setting environment variables directly for MCP yet, you need to either:
-    *   Set `SCOPUS_API_KEY` in your system environment variables.
-    *   Or create a local `.env` file and point to it (if supported).
-    *   (Recommended for local dev) Clone this repo and point Cursor to the local python script instead.
+4.  **Important**: You need to set `SCOPUS_API_KEY` in your system environment variables.
 
 ## Installation
 
