@@ -25,7 +25,7 @@ If you use Claude Desktop, you can skip downloading the code and just configure 
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/YOUR_USERNAME/scopus-mcp-server",
+        "git+https://github.com/qwe4559999/scopus-mcp.git",
         "scopus-mcp"
       ],
       "env": {
