@@ -91,3 +91,8 @@ pytest
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments & Contributors
+
+*   **[thinktraveller](https://github.com/thinktraveller)** - *Initial Work & Core Development*
+*   **[qwe4559999](https://github.com/qwe4559999)** - *Maintainer*

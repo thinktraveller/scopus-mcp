@@ -91,3 +91,8 @@ pytest
 ## 许可证
 
 本项目基于 MIT 许可证开源 - 详情请查看 [LICENSE](LICENSE) 文件。
+
+## 致谢与贡献者
+
+*   **[thinktraveller](https://github.com/thinktraveller)** - *初始工作与核心开发*
+*   **[qwe4559999](https://github.com/qwe4559999)** - *维护者*

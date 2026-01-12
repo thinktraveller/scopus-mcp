@@ -2,6 +2,10 @@
 name = "scopus-mcp"
 version = "0.1.0"
 description = "A Model Context Protocol server for the Elsevier Scopus API"
+authors = [
+  {name = "qwe4559999", email = "heyrhao@126.com"},
+  {name = "thinktraveller"}
+]
 requires-python = ">=3.10"
 dependencies = [
     "httpx>=0.27.0",
