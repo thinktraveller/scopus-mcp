@@ -13,3 +13,7 @@ build/
 .idea/
 .DS_Store
 .github/copilot-instructions.md
+mcp-publisher.exe
+server.json
+.mcpregistry_github_token
+.mcpregistry_registry_token
