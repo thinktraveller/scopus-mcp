@@ -40,6 +40,19 @@
 
 *(注意：此方法需要你的电脑已安装 [uv](https://docs.astral.sh/uv/))*
 
+### 在 Cursor / Trae 中使用
+
+1.  打开 **Cursor Settings** (或 Trae Settings) -> **Features** -> **MCP Servers**。
+2.  点击 **+ Add New MCP Server**。
+3.  填写信息：
+    *   **Name**: `scopus-mcp` (或者你喜欢的名字)
+    *   **Type**: `command` (stdio)
+    *   **Command**: `uvx --from git+https://github.com/qwe4559999/scopus-mcp.git scopus-mcp`
+4.  **注意**: 由于 Cursor/Trae 的 UI 目前可能暂不支持直接为 MCP 设置环境变量，你需要：
+    *   在系统环境变量中设置 `SCOPUS_API_KEY`。
+    *   或者创建本地 `.env` 文件（如果支持）。
+    *   （推荐用于开发）将本项目 Clone 到本地，然后将 Command 指向本地的 Python 脚本。
+
 ## 安装说明
 
 1.  确保你已安装 Python 3.10 或更高版本。
