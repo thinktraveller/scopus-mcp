@@ -1,6 +1,6 @@
 # Scopus MCP Server
 
-[中文](README_CN.md) | [English](README.md)
+**中文** | [English](README.md)
 
 这是一个基于 Model Context Protocol (MCP) 的服务器，用于访问 Elsevier Scopus API。它允许 AI 助手（如 Claude）搜索学术论文、获取摘要以及查找作者资料。
 

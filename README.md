@@ -1,6 +1,6 @@
 # Scopus MCP Server
 
-[中文](README_CN.md) | [English](README.md)
+[中文](README_CN.md) | **English**
 
 This is a Model Context Protocol (MCP) server that provides access to the Elsevier Scopus API. It allows AI assistants to search for academic papers, retrieve abstracts, and look up author profiles.
 
