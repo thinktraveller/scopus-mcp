@@ -8,3 +8,7 @@ config.json
 dist/
 build/
 .pytest_cache/
+.trae/
+.vscode/
+.idea/
+.DS_Store

@@ -1,5 +1,7 @@
 # Scopus MCP Server
 
+[中文](README_CN.md) | [English](README.md)
+
 This is a Model Context Protocol (MCP) server that provides access to the Elsevier Scopus API. It allows AI assistants to search for academic papers, retrieve abstracts, and look up author profiles.
 
 ## Configuration
@@ -85,3 +87,7 @@ Run tests with:
 ```bash
 pytest
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

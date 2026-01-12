@@ -1,0 +1,93 @@
+# Scopus MCP Server
+
+[中文](README_CN.md) | [English](README.md)
+
+这是一个基于 Model Context Protocol (MCP) 的服务器，用于访问 Elsevier Scopus API。它允许 AI 助手（如 Claude）搜索学术论文、获取摘要以及查找作者资料。
+
+## 配置方法
+
+### 设置步骤
+1.  前往 [Elsevier Developer Portal](https://dev.elsevier.com/) 申请免费的 API Key。
+2.  将 Key 填入项目文件夹下的 `config.json` 文件中。
+3.  编辑 `MCP_tool_config.json`，修改文件夹路径（注意在 Windows 上也要使用正斜杠 `/` 或双反斜杠 `\\`）。
+4.  最后，将 `MCP_tool_config.json` 的内容复制到你的 MCP 客户端配置文件中（例如 Claude Desktop）。
+
+## 🚀 快速开始 (零配置启动)
+
+如果你使用 Claude Desktop，你可以跳过去下载代码的繁琐步骤，直接通过以下配置使用：
+
+1.  **获取 Key**: 从 [Elsevier Developer Portal](https://dev.elsevier.com/) 获取 API Key。
+2.  **修改配置**: 编辑 `%APPDATA%\Claude\claude_desktop_config.json` (Windows) 或 `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)。
+3.  **添加内容**:
+
+```json
+{
+  "mcpServers": {
+    "scopus-assistant": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/qwe4559999/scopus-mcp.git",
+        "scopus-mcp"
+      ],
+      "env": {
+        "SCOPUS_API_KEY": "把你的KEY填在这里"
+      }
+    }
+  }
+}
+```
+
+*(注意：此方法需要你的电脑已安装 [uv](https://docs.astral.sh/uv/))*
+
+## 安装说明
+
+1.  确保你已安装 Python 3.10 或更高版本。
+2.  安装依赖：
+    ```bash
+    pip install .
+    ```
+
+## 使用指南
+
+### 运行服务器
+
+你可以使用 `uvx` (推荐) 或直接通过 python 运行。
+
+```bash
+# 使用 uvx
+uvx --from . scopus-mcp
+
+# 或者直接使用 python
+python -m scopus_mcp.server
+```
+
+### 可用工具
+
+1.  **`search_scopus`**
+    -   使用标准查询语法搜索 Scopus 数据库。
+    -   参数:
+        -   `query` (string): 搜索查询语句 (例如 `TITLE("Artificial Intelligence")`).
+        -   `count` (integer): 返回结果数量 (默认: 5).
+        -   `sort` (string): 排序方式 (例如 `coverDate`).
+
+2.  **`get_abstract_details`**
+    -   通过 Scopus ID 获取文档的详细信息。
+    -   参数:
+        -   `scopus_id` (string): 文档的 Scopus ID。
+
+3.  **`get_author_profile`**
+    -   获取作者的个人资料信息。
+    -   参数:
+        -   `author_id` (string): Scopus Author ID。
+
+## 开发
+
+运行测试:
+```bash
+pytest
+```
+
+## 许可证
+
+本项目基于 MIT 许可证开源 - 详情请查看 [LICENSE](LICENSE) 文件。
