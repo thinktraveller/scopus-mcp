@@ -28,8 +28,6 @@ If you use Claude Desktop, you can skip downloading the code and just configure 
     "scopus-assistant": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/qwe4559999/scopus-mcp.git",
         "scopus-mcp"
       ],
       "env": {
@@ -52,8 +50,6 @@ In Trae Settings -> MCP Servers -> Click **Add** -> Select **Manual Configuratio
     "scopus-assistant": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/qwe4559999/scopus-mcp.git",
         "scopus-mcp"
       ],
       "env": {
@@ -71,7 +67,7 @@ In Trae Settings -> MCP Servers -> Click **Add** -> Select **Manual Configuratio
 3.  Fill in the details:
     *   **Name**: `scopus-mcp`
     *   **Type**: `command` (stdio)
-    *   **Command**: `uvx --from git+https://github.com/qwe4559999/scopus-mcp.git scopus-mcp`
+    *   **Command**: `uvx scopus-mcp`
 4.  **Important**: You need to set `SCOPUS_API_KEY` in your system environment variables.
 
 ## Installation

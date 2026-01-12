@@ -28,8 +28,6 @@
     "scopus-assistant": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/qwe4559999/scopus-mcp.git",
         "scopus-mcp"
       ],
       "env": {
@@ -52,8 +50,6 @@
     "scopus-assistant": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/qwe4559999/scopus-mcp.git",
         "scopus-mcp"
       ],
       "env": {
@@ -71,7 +67,7 @@
 3.  填写信息：
     *   **Name**: `scopus-mcp`
     *   **Type**: `command` (stdio)
-    *   **Command**: `uvx --from git+https://github.com/qwe4559999/scopus-mcp.git scopus-mcp`
+    *   **Command**: `uvx scopus-mcp`
 4.  **注意**: 你需要在系统环境变量中设置 `SCOPUS_API_KEY`。
 
 ## 安装说明
