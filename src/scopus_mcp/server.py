@@ -124,6 +124,72 @@ async def handle_call_tool(
         logger.error(f"Error executing tool {name}: {e}")
         return [types.TextContent(type="text", text=f"Error: {str(e)}")]
 
+@server.list_prompts()
+async def handle_list_prompts() -> list[types.Prompt]:
+    return [
+        types.Prompt(
+            name="research-summary",
+            description="Search for papers on a topic and generate a research summary",
+            arguments=[
+                types.PromptArgument(
+                    name="topic",
+                    description="The research topic (e.g., 'machine learning healthcare')",
+                    required=True
+                )
+            ]
+        ),
+        types.Prompt(
+            name="author-analysis",
+            description="Analyze an author's research impact and recent work",
+            arguments=[
+                types.PromptArgument(
+                    name="author_id",
+                    description="The Scopus Author ID",
+                    required=True
+                )
+            ]
+        )
+    ]
+
+@server.get_prompt()
+async def handle_get_prompt(
+    name: str, arguments: dict[str, str] | None
+) -> types.GetPromptResult:
+    if not arguments:
+        arguments = {}
+
+    if name == "research-summary":
+        topic = arguments.get("topic", "unknown topic")
+        return types.GetPromptResult(
+            description=f"Research summary for {topic}",
+            messages=[
+                types.PromptMessage(
+                    role="user",
+                    content=types.TextContent(
+                        type="text",
+                        text=f"Please search specifically for high-cited papers related to '{topic}' published in the last 5 years using the search_scopus tool. Sort by cited references if possible. After retrieving the results, please summarize the key trends and findings in this field."
+                    )
+                )
+            ]
+        )
+
+    if name == "author-analysis":
+        author_id = arguments.get("author_id", "")
+        return types.GetPromptResult(
+            description=f"Analysis of author {author_id}",
+            messages=[
+                types.PromptMessage(
+                    role="user",
+                    content=types.TextContent(
+                        type="text",
+                        text=f"Please call the get_author_profile tool for Author ID '{author_id}'. Based on the returned data, analyze their research impact (citations, h-index if available), identify their main affiliation, and summarize their academic standing."
+                    )
+                )
+            ]
+        )
+
+    raise ValueError(f"Unknown prompt: {name}")
+
 async def main():
     try:
         async with stdio_server() as (read_stream, write_stream):
