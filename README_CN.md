@@ -4,6 +4,8 @@
 
 **中文** | [English](README.md)
 
+> **💡 查看 [使用指南与提示词示例](USAGE_EXAMPLES.md) 了解如何与该工具进行对话！**
+
 这是一个基于 Model Context Protocol (MCP) 的服务器，用于访问 Elsevier Scopus API。它允许 AI 助手（如 Claude）搜索学术论文、获取摘要以及查找作者资料。
 
 请注意，申请Elsevier Scopus API一般要求您的组织或机构购买了Elsevier的数据库服务。
