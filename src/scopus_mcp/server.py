@@ -74,6 +74,31 @@ async def handle_list_tools() -> list[types.Tool]:
             }
         ),
         types.Tool(
+            name="get_citing_papers",
+            description="Retrieve a list of papers that have cited the specified document (Forward Citations).",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "scopus_id": {
+                        "type": "string",
+                        "description": "The Scopus ID of the document to find citations for."
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "Number of results to return (default 5, max 25).",
+                        "default": 5,
+                        "maximum": 25
+                    },
+                    "sort": {
+                        "type": "string",
+                        "description": "Sort order (e.g., 'coverDate', 'relevancy').",
+                        "default": "coverDate"
+                    }
+                },
+                "required": ["scopus_id"]
+            }
+        ),
+        types.Tool(
             name="get_quota_status",
             description="Get the current API quota status (remaining/limit). Note: Values are updated only after making a request.",
             inputSchema={
@@ -125,6 +150,23 @@ async def handle_call_tool(
             profile = clean_author_profile(raw_data)
             
             return [types.TextContent(type="text", text=str(profile))]
+
+        elif name == "get_citing_papers":
+            scopus_id = arguments.get("scopus_id")
+            count = arguments.get("count", 5)
+            sort = arguments.get("sort", "coverDate")
+
+            if not scopus_id:
+                raise ValueError("scopus_id is required")
+
+            # Clean ID and construct REFEID query
+            clean_id = scopus_id.replace('SCOPUS_ID:', '')
+            query = f"REFEID({clean_id})"
+
+            raw_data = await client.search_scopus(query, count=count, sort=sort)
+            results = clean_search_results(raw_data)
+
+            return [types.TextContent(type="text", text=str(results))]
 
         elif name == "get_quota_status":
             quota = await client.get_quota_status()
