@@ -10,6 +10,8 @@ This is a Model Context Protocol (MCP) server that provides access to the Elsevi
 
 **Please note that requesting an Elsevier Scopus API key generally requires that your organization or institution has a subscription to Elsevier database services.**
 
+**Please note that your device must have an uv development environment**
+
 ## Configuration
 
 ### Setup Steps
