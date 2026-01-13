@@ -134,5 +134,5 @@ pytest
   <img src="https://contrib.rocks/image?repo=qwe4559999/scopus-mcp" />
 </a>
 
-*   **[thinktraveller](https://github.com/thinktraveller)** - *初始工作与核心开发*
-*   **[qwe4559999](https://github.com/qwe4559999)** - *维护者*
+*   <img src="https://github.com/thinktraveller.png" width="25" style="vertical-align:middle"> **[thinktraveller](https://github.com/thinktraveller)** - *初始工作与核心开发*
+*   <img src="https://github.com/qwe4559999.png" width="25" style="vertical-align:middle"> **[qwe4559999](https://github.com/qwe4559999)** - *维护者*

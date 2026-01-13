@@ -134,5 +134,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <img src="https://contrib.rocks/image?repo=qwe4559999/scopus-mcp" />
 </a>
 
-*   **[thinktraveller](https://github.com/thinktraveller)** - *Initial Work & Core Development*
-*   **[qwe4559999](https://github.com/qwe4559999)** - *Maintainer*
+*   <img src="https://github.com/thinktraveller.png" width="25" style="vertical-align:middle"> **[thinktraveller](https://github.com/thinktraveller)** - *Initial Work & Core Development*
+*   <img src="https://github.com/qwe4559999.png" width="25" style="vertical-align:middle"> **[qwe4559999](https://github.com/qwe4559999)** - *Maintainer*
