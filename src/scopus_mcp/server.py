@@ -72,6 +72,15 @@ async def handle_list_tools() -> list[types.Tool]:
                 },
                 "required": ["author_id"]
             }
+        ),
+        types.Tool(
+            name="get_quota_status",
+            description="Get the current API quota status (remaining/limit). Note: Values are updated only after making a request.",
+            inputSchema={
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
         )
     ]
 
@@ -116,6 +125,13 @@ async def handle_call_tool(
             profile = clean_author_profile(raw_data)
             
             return [types.TextContent(type="text", text=str(profile))]
+
+        elif name == "get_quota_status":
+            quota = await client.get_quota_status()
+            if not quota:
+                return [types.TextContent(type="text", text="No quota information available yet. Please make a request to initialize.")]
+            
+            return [types.TextContent(type="text", text=str(quota))]
 
         else:
             raise ValueError(f"Unknown tool: {name}")

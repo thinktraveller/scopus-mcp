@@ -31,20 +31,23 @@ class CacheManager:
                 cached_entry = json.load(f)
             
             timestamp = cached_entry.get('timestamp', 0)
-            if time.time() - timestamp > self.expiration_seconds:
+            ttl = cached_entry.get('ttl', self.expiration_seconds) # Use stored TTL or default
+            
+            if time.time() - timestamp > ttl:
                 return None # Expired
             
             return cached_entry.get('data')
         except (json.JSONDecodeError, IOError):
             return None
 
-    def set(self, url: str, data: Any, params: Optional[Dict[str, Any]] = None) -> None:
-        """Saves data to the cache with a timestamp."""
+    def set(self, url: str, data: Any, params: Optional[Dict[str, Any]] = None, ttl: Optional[int] = None) -> None:
+        """Saves data to the cache with a timestamp and optional TTL."""
         key = self._get_cache_key(url, params)
         file_path = self.cache_dir / f"{key}.json"
         
         cache_entry = {
             'timestamp': time.time(),
+            'ttl': ttl if ttl is not None else self.expiration_seconds,
             'data': data
         }
         

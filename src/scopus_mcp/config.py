@@ -43,3 +43,21 @@ def get_api_key() -> str:
         )
         
     return api_key
+
+def get_cache_config() -> Dict[str, int]:
+    """
+    Retrieves cache expiration settings from env vars or config.json.
+    Defaults:
+    - Search: 1 hour (3600s)
+    - Abstract: 30 days (2592000s)
+    - Author: 7 days (604800s)
+    - Default: 24 hours (86400s)
+    """
+    config = load_config_file()
+    
+    return {
+        'search': int(os.getenv('CACHE_TTL_SEARCH', config.get('cache_ttl_search', 3600))),
+        'abstract': int(os.getenv('CACHE_TTL_ABSTRACT', config.get('cache_ttl_abstract', 2592000))),
+        'author': int(os.getenv('CACHE_TTL_AUTHOR', config.get('cache_ttl_author', 604800))),
+        'default': int(os.getenv('CACHE_TTL_DEFAULT', config.get('cache_ttl_default', 86400)))
+    }
