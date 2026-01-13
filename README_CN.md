@@ -18,9 +18,13 @@
 
 ## 🚀 快速开始 (零配置启动)
 
+**前提条件**: 你的电脑需要安装 `uv`。
+- Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+- macOS/Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
 如果你使用 Claude Desktop，你可以跳过去下载代码的繁琐步骤，直接通过以下配置使用：
 
-1.  **获取 Key**: 从 [Elsevier Developer Portal](https://dev.elsevier.com/) 获取 API Key。
+1.  **获取 Key**: 从 [Elsevier Developer Portal](https://dev.elsevier.com/) 获取 API Key。(⚠️ **注意**: 建议使用教育/机构邮箱申请，普通邮箱可能无法通过或权限受限)
 2.  **修改配置**: 编辑 `%APPDATA%\Claude\claude_desktop_config.json` (Windows) 或 `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)。
 3.  **添加内容**:
 
@@ -40,7 +44,7 @@
 }
 ```
 
-*(注意：此方法需要你的电脑已安装 [uv](https://docs.astral.sh/uv/))*
+*(如果你没有安装 uv，也可以使用传统的 [安装说明](#安装说明) 手动部署)*
 
 ### 在 Trae 中使用
 

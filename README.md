@@ -18,9 +18,13 @@ This is a Model Context Protocol (MCP) server that provides access to the Elsevi
 
 ## 🚀 Quick Start (Zero Setup)
 
+**Prerequisite**: You must have `uv` installed.
+- Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+- macOS/Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
 If you use Claude Desktop, you can skip downloading the code and just configure it directly:
 
-1.  **Get Key**: Get a free API Key from [Elsevier Developer Portal](https://dev.elsevier.com/).
+1.  **Get Key**: Get a free API Key from [Elsevier Developer Portal](https://dev.elsevier.com/). (⚠️ **Note**: Educational/Institutional email is recommended; public email domains may be rejected).
 2.  **Configure**: Edit `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS).
 3.  **Add**:
 
@@ -40,7 +44,7 @@ If you use Claude Desktop, you can skip downloading the code and just configure 
 }
 ```
 
-*(Requires [uv](https://docs.astral.sh/uv/) installed)*
+*(If you don't have `uv`, see [Installation](#installation) for manual setup)*
 
 ### Using with Trae
 
