@@ -130,11 +130,8 @@ pytest
 
 ## 致谢与贡献者
 
-<a href="https://github.com/thinktraveller">
-    <img src="https://github.com/thinktraveller.png" width="60px" alt="thinktraveller"/>
-</a>
-<a href="https://github.com/qwe4559999">
-    <img src="https://github.com/qwe4559999.png" width="60px" alt="qwe4559999"/>
+<a href="https://github.com/qwe4559999/scopus-mcp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=qwe4559999/scopus-mcp" />
 </a>
 
 *   **[thinktraveller](https://github.com/thinktraveller)** - *初始工作与核心开发*
