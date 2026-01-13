@@ -12,7 +12,12 @@
 
 ### 设置步骤
 1.  前往 [Elsevier Developer Portal](https://dev.elsevier.com/) 申请免费的 API Key。
-2.  将 Key 填入项目文件夹下的 `config.json` 文件中。
+2.  在项目根目录下创建一个 `config.json` 文件（或从 `config.json.example` 复制），并填入你的 Key：
+    ```json
+    {
+      "api_key": "YOUR_KEY_HERE"
+    }
+    ```
 3.  编辑 `MCP_tool_config.json`，修改文件夹路径（注意在 Windows 上也要使用正斜杠 `/` 或双反斜杠 `\\`）。
 4.  最后，将 `MCP_tool_config.json` 的内容复制到你的 MCP 客户端配置文件中（例如 Claude Desktop）。
 

@@ -12,7 +12,12 @@ This is a Model Context Protocol (MCP) server that provides access to the Elsevi
 
 ### Setup Steps
 1.  Go to [Elsevier Developer Portal](https://dev.elsevier.com/) to apply for an API key.
-2.  Fill the key into `config.json` in the project folder.
+2.  Create a `config.json` file in the project root (or copy from `config.json.example`) and fill in your key:
+    ```json
+    {
+      "api_key": "YOUR_KEY_HERE"
+    }
+    ```
 3.  Edit `MCP_tool_config.json`, modifying the folder path (pay attention to the slash direction).
 4.  Finally, import the configuration into your MCP client (e.g., Claude Desktop) by copying the content of `MCP_tool_config.json`.
 
