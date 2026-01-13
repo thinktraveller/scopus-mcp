@@ -131,7 +131,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments & Contributors
 
 <a href="https://github.com/qwe4559999/scopus-mcp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=qwe4559999/scopus-mcp" />
+  <img alt="contributors" src="https://contrib.rocks/image?repo=qwe4559999/scopus-mcp" />
 </a>
 
 *   **[thinktraveller](https://github.com/thinktraveller)** - *Initial Work & Core Development*
