@@ -1,13 +1,28 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.qwe4559999/scopus-mcp",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "A Model Context Protocol server for the Elsevier Scopus API",
+  "repository": {
+    "url": "https://github.com/qwe4559999/scopus-mcp",
+    "source": "github"
+  },
+  "license": "MIT",
+  "keywords": [
+    "scopus",
+    "elsevier",
+    "academic",
+    "research",
+    "search",
+    "mcp"
+  ],
   "packages": [
     {
       "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
       "identifier": "scopus-mcp",
-      "version": "0.1.2",
+      "version": "0.1.4",
+      "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
       },
